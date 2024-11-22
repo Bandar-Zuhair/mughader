@@ -474,6 +474,22 @@ header {
   align-items: center;
 }
 
+/* Fade animation keyframes */
+@keyframes fadeInOut {
+  0%, 100% {
+      opacity: 0; /* Fully invisible */
+  }
+  50% {
+      opacity: 1; /* Fully visible */
+  }
+}
+
+/* Apply animation to the element */
+.mughader_fade_animation {
+  animation: fadeInOut 4s infinite; /* 4 seconds for one full cycle, repeat infinitely */
+  transition: opacity 0.5s ease-in-out;
+}
+
 .mughader_second_section video {
   width: 60vw;
 }
@@ -504,6 +520,7 @@ header {
   transform: scale(1.05);
   opacity: 1;
 }
+
 
 
 
