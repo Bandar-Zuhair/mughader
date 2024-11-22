@@ -1,0 +1,773 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+
+
+
+
+/* General Reset */
+* {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  direction: ltr;
+}
+
+body {
+  /* background: black; */
+  background: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Special Style */
+/* Initial state for animation */
+.mughader_animate_on_scroll {
+  transform: translateY(0px);
+  transition: all 0.5s ease !important;
+}
+
+/* Intro Animation */
+.intro_animation {
+  transform: translateY(0);
+}
+
+/* Outro Animation */
+.outro_animation {
+  transform: translateY(100px);
+}
+
+/* Chatbot Icon */
+#chatbot-icon {
+  z-index: 999;
+  position: fixed;
+  bottom: 20px;
+  right: 0.5vmax;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 5vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#chatbot-icon img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+#chatbot-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Chat Sidebar */
+#chat-sidebar {
+  z-index: 999;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 80%;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-sidebar.active {
+  transform: translateX(0);
+}
+
+#chat-header {
+  direction: rtl;
+  background-color: #0078d7;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#chat-header h3 {
+  margin: 0;
+}
+
+#close-chat {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+.message-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+#chat-input {
+  direction: rtl;
+  padding: 10px 20px 20px 20px;
+  display: flex;
+  gap: 5px;
+  border-top: 1px solid #ddd;
+  /* Align button with expanding textarea */
+}
+
+#chat-input textarea {
+  direction: rtl;
+  width: 100%;
+  flex: 1;
+  padding-left: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+  min-height: 40px;
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 16px;
+  line-height: 1.3;
+  align-content: center;
+}
+
+#chat-input button {
+  padding: 0 2px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+#chat-input button:hover {
+  background-color: #005bb5;
+}
+
+/* Chat Messages */
+.chat {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.chat.message {
+  justify-content: flex-end;
+}
+
+.chat.response {
+  justify-content: flex-start;
+}
+
+.chat img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.chat span {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat.message span {
+  background-color: #0078d7;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat.response span {
+  background-color: #e9ecef;
+  color: #333;
+  align-self: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Header Styling */
+header {
+  background: black;
+  position: relative;
+}
+
+.mughader_header_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+/* Logo */
+.mughader_header_logo {
+  width: 7rem;
+}
+
+/* Navigation Links (Desktop) */
+.mughader_desktop_nav {
+  display: flex;
+}
+
+.mughader_nav_links {
+  direction: rtl;
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.mughader_nav_links a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.mughader_nav_links a:hover {
+  color: #007bff;
+}
+
+/* Mobile Menu Icon */
+.mughader_mobile_menu_icon {
+  color: white;
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sidebar (Mobile) */
+.mughader_mobile_sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  /* Hidden offscreen */
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.mughader_mobile_sidebar ul {
+  list-style: none;
+  text-align: right;
+}
+
+.mughader_mobile_sidebar li {
+  margin: 2rem 0 1rem 0;
+}
+
+.mughader_mobile_sidebar a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 1.5vmax;
+  font-weight: bold;
+}
+
+.mughader_mobile_sidebar a:hover {
+  color: #007bff;
+}
+
+/* Sidebar Overlay */
+.mughader_sidebar_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  z-index: 999;
+  /* Below sidebar but above other content */
+  opacity: 0;
+  /* Start fully transparent */
+  visibility: hidden;
+  /* Hide it from screen readers and mouse events */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  /* Smooth transition */
+}
+
+/* Show overlay when sidebar is open */
+.mughader_sidebar_overlay.active {
+  opacity: 1;
+  /* Fully visible */
+  visibility: visible;
+  /* Ensure it's interactable */
+}
+
+/* Close Icon */
+.mughader_mobile_sidebar .mughader_close_icon {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.mughader_mobile_sidebar .mughader_close_icon:hover {
+  color: #ff4d4d;
+  /* Highlighted color on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* First Section Style */
+.mughader_first_section {
+  position: relative;
+  height: 30vmax;
+  /* Full viewport height */
+  width: 100%;
+  /* Full width */
+  background-image: url('مكتب-سياحي/مكتب-سياحي.jpg');
+  background-size: 100% 100%;
+  /* Default stretch for larger screens */
+  background-position: center;
+  /* Keeps the image centered */
+  background-repeat: no-repeat;
+  /* Prevents repeating the image */
+}
+
+/* Overlay */
+.mughader_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent overlay for text readability */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text Container */
+.mughader_text_container {
+  text-align: center;
+  color: #fff;
+  /* White text for contrast */
+  padding: 5px;
+  width: 100%;
+}
+
+/* Text Styles */
+.mughader_first_section_text_1 {
+  font-size: 1.3vmax;
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+}
+
+/* Text Styles */
+.mughader_first_section_text_2 {
+  font-size: 1.1vmax;
+  font-weight: bold;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: right;
+}
+
+.mughader_first_section_title {
+  font-size: 1.7vmax;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Smooth fade-in and fade-out effect */
+.mughader_first_section_places_names {
+  font-size: 1.9vmax;
+  font-weight: bold;
+  opacity: 0;
+  /* Initially invisible */
+  visibility: visible;
+  /* Ensure it's visible in the DOM */
+  transition: opacity 0.3s ease-in-out;
+  /* Faster transition */
+}
+
+/* Make visible after fading */
+.mughader_first_section_places_names.visible {
+  opacity: 1;
+}
+
+
+/* Line timer styles */
+.mughader_line_timer {
+  height: 4px;
+  /* Thickness of the timer line */
+  background-color: #007BFF;
+  /* Timer line color */
+  position: relative;
+  margin-top: 10px;
+  /* Space below the text */
+  transition: width 1.8s linear;
+  /* Keep animation duration synchronized */
+  width: 0;
+  /* Initial state */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Second Section Style */
+.mughader_second_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mughader_second_section video {
+  width: 60vw;
+}
+
+.mughader_second_section * {
+  font-weight: bold;
+  font-size: 1.5vmax;
+  text-align: center;
+}
+
+.mughader_social_media_icons_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mughader_social_media_icons_div img {
+  opacity: 0.8;
+  width: 4vmax;
+  margin: 0 0.2vmax;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mughader_social_media_icons_div img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Third Section Style */
+.mughader_third_section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.mughader_visiting_place_card_div {
+  width: 30vmax;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  flex: 1 1 calc(30vmax - 1rem);
+  max-width: 30vmax;
+  border: 0.5px solid black;
+}
+
+.mughader_visiting_place_card_div img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: all 1s ease;
+}
+
+.mughader_visiting_place_card_div img:hover {
+  transform: scale(1.1);
+}
+
+.mughader_visiting_place_card_div h6,
+.mughader_visiting_place_card_div div {
+  position: absolute;
+  /* Position over the image */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Adjust centering */
+  color: #fff;
+  /* Text color to contrast with the image */
+  text-align: center;
+  /* Center text alignment */
+}
+
+.mughader_visiting_place_card_div h6 {
+  background: rgb(0, 0, 0, 0.5);
+  padding: 0 1vmax;
+  top: 20%;
+  /* Position near the top */
+  font-size: 2.5vmax;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  /* Add a shadow for readability */
+}
+
+.mughader_visiting_place_card_div div {
+  background: rgb(0, 0, 0, 0.5);
+  padding: 0.1vmax 0.5vmax;
+  bottom: 10%;
+  /* Position near the bottom */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Space between icon and text */
+  font-size: 1.2vmax;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  /* Add a shadow for readability */
+}
+
+.mughader_visiting_place_card_div div ion-icon {
+  font-size: 2vmax;
+  color: #fff;
+  /* Match the text color */
+}
+
+
+
+
+
+
+
+
+
+
+/* Fourth Section Style */
+.mughader_fourth_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mughader_fourth_section * {
+  font-size: 1vmax;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Style */
+#mughader_footer {
+  background: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer img {
+  width: 6rem;
+}
+
+footer * {
+  color: white;
+  text-align: center;
+  font-size: 0.8vmax;
+}
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mughader_desktop_nav {
+    display: none;
+    /* Hide desktop navigation */
+  }
+
+  .mughader_mobile_menu_icon {
+    display: block;
+    /* Show mobile menu icon */
+  }
+
+
+
+
+
+
+
+
+  /* Chatbot Icon */
+  #chatbot-icon {
+    width: 7.5vmax;
+  }
+
+
+
+
+
+  .mughader_first_section {
+    background-size: 110% 100%;
+    /* Adjust width to maintain height */
+    background-position: center center;
+    /* Keep the center of the image visible */
+    overflow: hidden;
+    /* Hide any overflow */
+  }
+
+
+
+
+
+
+
+
+  .mughader_second_section video {
+    width: 80vw;
+  }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .mughader_header_container {
+    justify-content: space-between;
+  }
+
+
+
+
+
+  #chatbot-icon {
+    width: 8vmax;
+  }
+
+  #chat-header {
+    justify-content: space-between;
+  }
+
+  #close-chat {
+    font-size: 1.5rem;
+  }
+
+  #chat-input {
+    padding: 5px;
+  }
+
+  #chat-input button {
+    font-size: 0.9rem;
+  }
+
+
+
+
+
+  .mughader_first_section {
+    background-size: 120% 100%;
+  }
+
+
+
+
+
+
+
+  .mughader_second_section video {
+    width: 100vw;
+  }
+
+
+
+
+
+
+  /* Third Section Style */
+  .mughader_third_section {
+    padding: 1rem 0;
+    gap: 0.5rem;
+  }
+
+  .mughader_visiting_place_card_div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+
+
+
+}
