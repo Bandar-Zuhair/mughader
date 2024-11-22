@@ -116,7 +116,7 @@ function applyFadingAnimation() {
 
     setInterval(() => {
         // Adjust opacity based on the current direction
-        opacity = fadingOut ? opacity - 0.05 : opacity + 0.05;
+        opacity = fadingOut ? opacity - 0.09 : opacity + 0.09;
 
         // Update the element's style
         fadingText.style.opacity = opacity;
@@ -197,7 +197,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let API_URL = "https://api.openai.com/v1/chat/completions";
     let API_KEY = "sk-***76cA";
-    /* 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 */
+
+    // Check if the user is on a mobile device
+    const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
 
     // Toggle Chat Sidebar
     chatbotIcon.addEventListener("click", () => {
@@ -259,22 +261,62 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Attach Send Message Function to Enter Key
-    messageBar.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" && !event.shiftKey) {
-            event.preventDefault(); // Prevent default behavior
-            sendBtn.click();
-        } else if (event.key === "Enter" && event.shiftKey) {
-            event.preventDefault(); // Prevent default behavior
-            const cursorPosition = messageBar.selectionStart;
-            messageBar.value =
-                messageBar.value.substring(0, cursorPosition) + "\n" + messageBar.value.substring(cursorPosition);
-            messageBar.selectionStart = messageBar.selectionEnd = cursorPosition + 1; // Move cursor to the new line
-            messageBar.style.height = "auto"; // Reset height to auto
-            messageBar.style.height = `${messageBar.scrollHeight}px`; // Adjust height based on content
-        }
+    // Attach Send Message Function to Enter Key (for Desktop)
+    if (!isMobileDevice) {
+        messageBar.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault(); // Prevent default behavior
+                sendBtn.click();
+            } else if (event.key === "Enter" && event.shiftKey) {
+                event.preventDefault(); // Allow Shift+Enter to insert a new line
+                const cursorPosition = messageBar.selectionStart;
+                messageBar.value =
+                    messageBar.value.substring(0, cursorPosition) + "\n" + messageBar.value.substring(cursorPosition);
+                messageBar.selectionStart = messageBar.selectionEnd = cursorPosition + 1; // Move cursor to the new line
+                messageBar.style.height = "auto"; // Reset height to auto
+                messageBar.style.height = `${messageBar.scrollHeight}px`; // Adjust height based on content
+            }
+        });
+    }
+
+    // Enable Enter for New Line Only (for Mobile)
+    if (isMobileDevice) {
+        messageBar.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent sending the message
+                const cursorPosition = messageBar.selectionStart;
+                messageBar.value =
+                    messageBar.value.substring(0, cursorPosition) + "\n" + messageBar.value.substring(cursorPosition);
+                messageBar.selectionStart = messageBar.selectionEnd = cursorPosition + 1; // Move cursor to the new line
+                messageBar.style.height = "auto"; // Reset height to auto
+                messageBar.style.height = `${messageBar.scrollHeight}px`; // Adjust height based on content
+            }
+        });
+    }
+
+    // Adjust Textarea Height Dynamically
+    messageBar.addEventListener("input", function () {
+        this.style.height = "auto"; // Reset height to auto
+        this.style.height = `${this.scrollHeight}px`; // Set height based on scroll height
+    });
+
+    // Handle Dynamic Text Direction
+    document.querySelectorAll('.mughader_dynamic_direction_input_class').forEach(input => {
+        input.addEventListener('input', function () {
+            let firstChar = this.value.trim().charAt(0);
+
+            if (firstChar) {
+                // Check if the first character is Arabic
+                if (firstChar.match(/[\u0600-\u06FF]/)) {
+                    this.style.direction = 'rtl';
+                } else {
+                    this.style.direction = 'ltr';
+                }
+            }
+        });
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const messageBar = document.getElementById("message-bar");
@@ -300,7 +342,6 @@ document.querySelectorAll('.mughader_dynamic_direction_input_class').forEach(inp
         }
     });
 });
-
 
 
 
