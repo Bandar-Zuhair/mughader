@@ -313,17 +313,24 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  z-index: 998; /* Below sidebar but above other content */
-  opacity: 0; /* Start fully transparent */
-  visibility: hidden; /* Hide from view */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  z-index: 998;
+  /* Below sidebar but above other content */
+  opacity: 0;
+  /* Start fully transparent */
+  visibility: hidden;
+  /* Hide from view */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  /* Smooth transition */
 }
 
 /* Active Overlay */
 .mughader_sidebar_overlay.active {
-  opacity: 1; /* Fully visible */
-  visibility: visible; /* Make it interactable */
+  opacity: 1;
+  /* Fully visible */
+  visibility: visible;
+  /* Make it interactable */
 }
 
 
@@ -567,26 +574,30 @@ header {
 .mughader_visiting_place_card_div h6,
 .mughader_visiting_place_card_div div {
   position: absolute;
-  /* Position over the image */
   left: 50%;
-  /* Center horizontally */
   transform: translateX(-50%);
-  /* Adjust centering */
   color: #fff;
-  /* Text color to contrast with the image */
   text-align: center;
-  /* Center text alignment */
 }
 
 .mughader_visiting_place_card_div h6 {
   background: rgb(0, 0, 0, 0.5);
+}
+
+.mughader_click_to_show_place_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mughader_visiting_place_card_div h6,
+.mughader_visiting_place_card_div p {
+  width: fit-content;
   padding: 0 1vmax;
   top: 20%;
-  /* Position near the top */
-  font-size: 2.5vmax;
+  font-size: 1rem;
   font-weight: bold;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  /* Add a shadow for readability */
 }
 
 .mughader_visiting_place_card_div div {
@@ -642,7 +653,7 @@ header {
 
 
 /* Footer Style */
-#mughader_footer {
+footer {
   background: black;
   display: flex;
   flex-wrap: wrap;
@@ -657,7 +668,7 @@ footer img {
 footer * {
   color: white;
   text-align: center;
-  font-size: 0.8vmax;
+  font-size: 0.7rem;
 }
 
 
@@ -719,7 +730,26 @@ footer * {
   .mughader_second_section video {
     width: 80vw;
   }
+
+
+
+
+
+  .mughader_visiting_place_card_div p {
+    font-size: 0.8rem;
+  }
+
+
+
+
+  footer * {
+    font-size: 0.5rem;
+  }
 }
+
+
+
+
 
 
 
@@ -784,9 +814,4 @@ footer * {
     width: 100%;
     max-width: 100%;
   }
-
-
-
-
-
 }
