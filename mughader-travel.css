@@ -79,7 +79,7 @@ body {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 100vw;
+  width: 50%;
   height: 80%;
   background-color: #f8f9fa;
   border: 1px solid #ddd;
@@ -100,7 +100,7 @@ body {
   color: #fff;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -136,8 +136,8 @@ body {
   direction: rtl;
   width: 100%;
   flex: 1;
-  padding-left: 5px;
-  border: 1px solid #ddd;
+  padding: 0 5px;
+  border: 1px solid black;
   border-radius: 5px;
   resize: none;
   min-height: 40px;
@@ -313,25 +313,19 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent background */
-  z-index: 999;
-  /* Below sidebar but above other content */
-  opacity: 0;
-  /* Start fully transparent */
-  visibility: hidden;
-  /* Hide it from screen readers and mouse events */
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  /* Smooth transition */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 998; /* Below sidebar but above other content */
+  opacity: 0; /* Start fully transparent */
+  visibility: hidden; /* Hide from view */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
 }
 
-/* Show overlay when sidebar is open */
+/* Active Overlay */
 .mughader_sidebar_overlay.active {
-  opacity: 1;
-  /* Fully visible */
-  visibility: visible;
-  /* Ensure it's interactable */
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make it interactable */
 }
+
 
 /* Close Icon */
 .mughader_mobile_sidebar .mughader_close_icon {
@@ -476,17 +470,23 @@ header {
 
 /* Fade animation keyframes */
 @keyframes fadeInOut {
-  0%, 100% {
-      opacity: 0; /* Fully invisible */
+
+  0%,
+  100% {
+    opacity: 0;
+    /* Fully invisible */
   }
+
   50% {
-      opacity: 1; /* Fully visible */
+    opacity: 1;
+    /* Fully visible */
   }
 }
 
 /* Apply animation to the element */
 .mughader_fade_animation {
-  animation: fadeInOut 4s infinite; /* 4 seconds for one full cycle, repeat infinitely */
+  animation: fadeInOut 4s infinite;
+  /* 4 seconds for one full cycle, repeat infinitely */
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -686,6 +686,10 @@ footer * {
 
 
 
+  /* Chat Sidebar */
+  #chat-sidebar {
+    width: 100vw;
+  }
 
   /* Chatbot Icon */
   #chatbot-icon {
@@ -729,12 +733,10 @@ footer * {
 
 
 
+
+
   #chatbot-icon {
     width: 8vmax;
-  }
-
-  #chat-header {
-    justify-content: space-between;
   }
 
   #close-chat {
