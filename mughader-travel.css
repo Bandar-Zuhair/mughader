@@ -33,7 +33,7 @@ body {
 /* Initial state for animation */
 .mughader_animate_on_scroll {
   transform: translateY(0px);
-  transition: all 0.5s ease !important;
+  transition: all 1s ease !important;
 }
 
 /* Intro Animation */
@@ -43,7 +43,7 @@ body {
 
 /* Outro Animation */
 .outro_animation {
-  transform: translateY(100px);
+  transform: translateY(50px);
 }
 
 /* Chatbot Icon */
@@ -479,7 +479,7 @@ header {
 
   0%,
   100% {
-    opacity: 0;
+    opacity: 0.2;
     /* Fully invisible */
   }
 
@@ -491,9 +491,9 @@ header {
 
 /* Apply animation to the element */
 .mughader_fade_animation {
-  animation: fadeInOut 4s infinite;
+  animation: fadeInOut 2s infinite;
   /* 4 seconds for one full cycle, repeat infinitely */
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 9s ease-in-out;
 }
 
 .mughader_second_section video {
