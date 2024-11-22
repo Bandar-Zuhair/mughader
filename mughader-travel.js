@@ -185,8 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     let chatbotIcon = document.getElementById("chatbot-icon");
     let chatSidebar = document.getElementById("chat-sidebar");
@@ -194,20 +192,32 @@ document.addEventListener("DOMContentLoaded", () => {
     let sendBtn = document.getElementById("send-btn");
     let messageBar = document.getElementById("message-bar");
     let messageBox = document.querySelector(".message-box");
+    let chatOverlay = document.getElementById("chat-overlay");
 
     let API_URL = "https://api.openai.com/v1/chat/completions";
     let API_KEY = "sk-***76cA";
 
+    /* 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 */
+    
     // Check if the user is on a mobile device
     const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
 
-    // Toggle Chat Sidebar
+    // Open Slider if ai bot icon is clicked
     chatbotIcon.addEventListener("click", () => {
         chatSidebar.classList.add("active");
+        chatOverlay.classList.add("active");
     });
 
+    // Close Sidebar if close slider button is clicked
     closeChat.addEventListener("click", () => {
         chatSidebar.classList.remove("active");
+        chatOverlay.classList.remove("active");
+    });
+
+    // Close Sidebar if Overlay is Clicked
+    chatOverlay.addEventListener("click", () => {
+        chatSidebar.classList.remove("active");
+        chatOverlay.classList.remove("active");
     });
 
     // Send Message Function
@@ -255,9 +265,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     })
                     .catch(() => {
                         let ChatBotResponse = document.querySelector(".response .new");
-                        ChatBotResponse.innerHTML = "Oops! An error occurred. Please try again.";
+                        ChatBotResponse.innerHTML = "الموقع مازال في وضع التجربة";
+                        /* ChatBotResponse.innerHTML = "Oops! An error occurred. Please try again."; */
                     });
             }, 100);
+
+
+
+            document.getElementById("message-bar").style.height = "40px"; // Reset to default height;
         }
     };
 
@@ -327,6 +342,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Function to trach the first inserted letter in the inputs with the class name of "mughader_dynamic_direction_input_class" to set their direction value */
 document.querySelectorAll('.mughader_dynamic_direction_input_class').forEach(input => {
     input.addEventListener('input', function () {
@@ -342,14 +372,6 @@ document.querySelectorAll('.mughader_dynamic_direction_input_class').forEach(inp
         }
     });
 });
-
-
-
-
-
-
-
-
 
 
 
