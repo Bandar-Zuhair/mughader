@@ -503,7 +503,7 @@ header {
 
 .mughader_second_section * {
   font-weight: bold;
-  font-size: 1.5vmax;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -638,7 +638,7 @@ header {
 }
 
 .mughader_fourth_section * {
-  font-size: 1vmax;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -725,7 +725,9 @@ footer * {
 
 
 
-
+  .mughader_second_section * {
+    font-size: 1rem;
+  }
 
   .mughader_second_section video {
     width: 80vw;
@@ -738,6 +740,14 @@ footer * {
   .mughader_visiting_place_card_div p {
     font-size: 0.8rem;
   }
+
+
+
+
+  .mughader_fourth_section * {
+    font-size: 0.8rem;
+  }
+
 
 
 
@@ -794,7 +804,9 @@ footer * {
 
 
 
-
+  .mughader_second_section * {
+    font-size: 0.8rem;
+  }
   .mughader_second_section video {
     width: 100vw;
   }
@@ -813,5 +825,11 @@ footer * {
   .mughader_visiting_place_card_div {
     width: 100%;
     max-width: 100%;
+  }
+
+
+
+  .mughader_fourth_section * {
+    font-size: 0.6rem;
   }
 }
