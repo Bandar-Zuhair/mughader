@@ -140,26 +140,6 @@ applyFadingAnimation();
 
 
 
-// Target all divs with the class name "mughader_visiting_place_card_div"
-const visitingPlaceDivs = document.querySelectorAll(".mughader_visiting_place_card_div");
-
-// Loop through each found div
-visitingPlaceDivs.forEach(div => {
-    // Add the "mughader_animate_on_scroll" class to the div
-    div.classList.add("mughader_animate_on_scroll");
-
-    // Find only the direct child elements of the current div
-    const childElements = Array.from(div.children).filter(
-        child => !child.classList.contains("mughader_visiting_place_card_div")
-    );
-
-    // Add the "mughader_animate_on_scroll" class to each child element
-    childElements.forEach(child => {
-        child.classList.add("mughader_animate_on_scroll");
-    });
-});
-
-
 
 
 
