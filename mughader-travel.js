@@ -106,38 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Select the element
-const fadingText = document.getElementById("mughader_fading_animation");
-
-// Function to apply the fade-in-out animation
-function applyFadingAnimation() {
-    let opacity = 1; // Start fully visible
-    let fadingOut = true; // Indicates the current fading direction
-
-    setInterval(() => {
-        // Adjust opacity based on the current direction
-        opacity = fadingOut ? opacity - 0.09 : opacity + 0.09;
-
-        // Update the element's style
-        fadingText.style.opacity = opacity;
-
-        // Reverse direction when reaching the limits
-        if (opacity <= 0) fadingOut = false; // Start fading in
-        if (opacity >= 1) fadingOut = true; // Start fading out
-    }, 50); // Adjust this value to change the speed of fading
-}
-
-// Initialize the animation
-applyFadingAnimation();
-
-
-
-
-
-
-
-
-
 
 
 
@@ -185,20 +153,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+/* Ai bot chat functionality */
 document.addEventListener("DOMContentLoaded", () => {
-    let chatbotIcon = document.getElementById("chatbot-icon");
-    let chatSidebar = document.getElementById("chat-sidebar");
-    let closeChat = document.getElementById("close-chat");
-    let sendBtn = document.getElementById("send-btn");
-    let messageBar = document.getElementById("message-bar");
-    let messageBox = document.querySelector(".message-box");
-    let chatOverlay = document.getElementById("chat-overlay");
+    let chatbotIcon = document.getElementById("mughader_chatbot_icon");
+    let chatSidebar = document.getElementById("mughader_chat_sidebar");
+    let closeChat = document.getElementById("mughader_close_chat");
+    let sendBtn = document.getElementById("mughader_send_btn");
+    let messageBar = document.getElementById("mughader_message_bar");
+    let messageBox = document.querySelector(".mughader_message_box");
+    let chatOverlay = document.getElementById("mughader_chat_overlay");
 
     let API_URL = "https://api.openai.com/v1/chat/completions";
     let API_KEY = "sk-***76cA";
 
     /* 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 */
-    
+
     // Check if the user is on a mobile device
     const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
 
@@ -266,13 +235,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     .catch(() => {
                         let ChatBotResponse = document.querySelector(".response .new");
                         ChatBotResponse.innerHTML = "الموقع مازال في وضع التجربة";
-                        /* ChatBotResponse.innerHTML = "Oops! An error occurred. Please try again."; */
                     });
             }, 100);
 
 
 
-            document.getElementById("message-bar").style.height = "40px"; // Reset to default height;
+            document.getElementById("mughader_message_bar").style.height = "40px"; // Reset to default height;
         }
     };
 
@@ -332,9 +300,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+/* Auto resize textarea element */
 document.addEventListener("DOMContentLoaded", function () {
-    const messageBar = document.getElementById("message-bar");
+    const messageBar = document.getElementById("mughader_message_bar");
 
     messageBar.addEventListener("input", function () {
         this.style.height = "auto"; // Reset height to auto
@@ -373,6 +341,16 @@ document.querySelectorAll('.mughader_dynamic_direction_input_class').forEach(inp
     });
 });
 
+
+
+
+/* Open WhatsApp */
+openWhatsAppNumber = function(){
+    const whatsappNumber = "+966533379004";
+    const message = encodeURIComponent('سلام عليكم ورحمة الله وبركاته'); // Optional pre-filled message
+    const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(url, "_blank"); // Opens in a new tab
+}
 
 
 
