@@ -165,28 +165,34 @@
 
 
     <!-- Sidebar Overlay -->
-    <div id="chat-overlay" class="mughader_sidebar_overlay"></div>
+    <div id="mughader_chat_overlay" class="mughader_sidebar_overlay"></div>
 
 
     <!-- Chatbot Icon -->
-    <div id="chatbot-icon">
+    <div id="mughader_chatbot_icon">
         <img src="مكتب-سياحي/مكتب-سياحي-ذكاء-اصطناعي.jpg" alt="مكتب سياحي - مغادر">
     </div>
 
     <!-- Chat Sidebar -->
-    <div id="chat-sidebar">
-        <div id="chat-header">
+    <div id="mughader_chat_sidebar">
+        <div id="mughader_chat_header">
             <h3>تحدث معنا</h3>
-            <button id="close-chat">&times;</button>
+            <button id="mughader_close_chat">&times;</button>
         </div>
-        <div id="chat-messages" class="message-box"></div>
-        <div id="chat-input">
-            <textarea id="message-bar" class="mughader_dynamic_direction_input_class" placeholder="أكتب هنا"></textarea>
-            <button id="send-btn">إرسال</button>
+        <div class="mughader_message_box"></div>
+        <div id="mughader_chat_input">
+            <textarea id="mughader_message_bar" class="mughader_dynamic_direction_input_class"
+                placeholder="أكتب هنا"></textarea>
+            <button id="mughader_send_btn">إرسال</button>
         </div>
     </div>
 
 
+    <!-- WhatsApp Code -->
+    <div class="whatsapp_icon_div" onclick="openWhatsAppNumber()">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+        <p>للحجز والإستفسارات</p>
+    </div>
 
 
 
