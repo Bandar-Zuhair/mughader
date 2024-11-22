@@ -75,7 +75,7 @@ body {
 
 /* Chat Sidebar */
 #mughader_chat_sidebar {
-  z-index: 999;
+  z-index: 1000;
   position: fixed;
   bottom: 0;
   right: 0;
