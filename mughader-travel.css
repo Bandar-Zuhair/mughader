@@ -258,7 +258,6 @@ header {
 }
 
 .mughader_header_container {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -433,9 +432,15 @@ header {
   width: 100%;
 }
 
+.mughader_first_section_title {
+  font-size: 1.7vmax;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
 /* Text Styles */
 .mughader_first_section_text_1 {
-  font-size: 1.3vmax;
+  font-size: 1.3rem;
   font-weight: bold;
   width: 100%;
   text-align: right;
@@ -443,29 +448,20 @@ header {
 
 /* Text Styles */
 .mughader_first_section_text_2 {
-  font-size: 1.1vmax;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 10px;
   width: 100%;
   text-align: right;
 }
 
-.mughader_first_section_title {
-  font-size: 1.7vmax;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
 /* Smooth fade-in and fade-out effect */
 .mughader_first_section_places_names {
-  font-size: 1.9vmax;
+  font-size: 1.7rem;
   font-weight: bold;
   opacity: 0;
-  /* Initially invisible */
   visibility: visible;
-  /* Ensure it's visible in the DOM */
   transition: opacity 0.3s ease-in-out;
-  /* Faster transition */
 }
 
 /* Make visible after fading */
@@ -747,6 +743,7 @@ footer * {
   .whatsapp_icon_div {
     font-size: 1rem;
   }
+
   .whatsapp_icon_div ion-icon {
     font-size: 1.5rem;
   }
@@ -757,11 +754,18 @@ footer * {
 
   .mughader_first_section {
     background-size: 110% 100%;
-    /* Adjust width to maintain height */
-    background-position: center center;
-    /* Keep the center of the image visible */
-    overflow: hidden;
-    /* Hide any overflow */
+  }
+  .mughader_first_section_title {
+    font-size: 1.2rem;
+  }
+  .mughader_first_section_text_1 {
+    font-size: 1rem;
+  }
+  .mughader_first_section_text_2 {
+    font-size: 1rem;
+  }
+  .mughader_first_section_places_names {
+    font-size: 1.2rem;
   }
 
 
@@ -770,7 +774,7 @@ footer * {
 
 
   .mughader_second_section * {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .mughader_second_section video {
@@ -822,6 +826,13 @@ footer * {
 
 
 
+  /* Logo */
+  .mughader_header_logo {
+    width: 4.5rem;
+  }
+
+
+
 
 
 
@@ -830,6 +841,7 @@ footer * {
   .whatsapp_icon_div {
     font-size: 0.8rem;
   }
+
   .whatsapp_icon_div ion-icon {
     font-size: 1rem;
   }
@@ -866,6 +878,18 @@ footer * {
     background-size: 120% 100%;
   }
 
+  .mughader_first_section_title {
+    font-size: 0.8rem;
+  }
+  .mughader_first_section_text_1 {
+    font-size: 0.5rem;
+  }
+  .mughader_first_section_text_2 {
+    font-size: 0.5rem;
+  }
+  .mughader_first_section_places_names {
+    font-size: 0.8rem;
+  }
 
 
 
