@@ -273,17 +273,16 @@ header {
 
 /* Sidebar (Mobile) */
 .mughader_mobile_sidebar {
+  z-index: 1000;
   position: fixed;
   top: 0;
   right: -250px;
-  /* Hidden offscreen */
   width: 250px;
   height: 100%;
   background-color: #ffffff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   transition: right 0.3s ease;
-  z-index: 1000;
 }
 
 .mughader_mobile_sidebar ul {
@@ -292,13 +291,13 @@ header {
 }
 
 .mughader_mobile_sidebar li {
-  margin: 2rem 0 1rem 0;
+  margin: 2rem 0 0.5rem 0;
 }
 
 .mughader_mobile_sidebar a {
   text-decoration: none;
   color: #333333;
-  font-size: 1.5vmax;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
