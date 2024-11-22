@@ -777,6 +777,10 @@ footer * {
     width: 80vw;
   }
 
+  .mughader_social_media_icons_div img {
+    width: 6.5vmax;
+  }
+
 
 
 
@@ -873,6 +877,10 @@ footer * {
 
   .mughader_second_section video {
     width: 100vw;
+  }
+
+  .mughader_social_media_icons_div img {
+    width: 7vmax;
   }
 
 
