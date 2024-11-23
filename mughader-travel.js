@@ -348,19 +348,21 @@ document.querySelectorAll('.mughader_dynamic_direction_input_class').forEach(inp
 
 
 /* Insert new click data in the google sheet */
-function insertNewClick(column) {
-    const scriptURL = "https://script.google.com/macros/s/AKfycby0edQ6yhnPiLuA5RKMldFfAmwASGk1lNmmQRF1XstwWAl9EoO3IBSA5ehyd5wa8wXV/exec";
+function insertNewClick(columnName) {
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyU-p7z3tHF0I1K0GCmjcRG3CaG0NPkGyMPTvhlGPISxwIYrt6ueD7O2iHSza9SPOP3/exec";
 
-    fetch(`${scriptURL}?column=${column}`)
+    // Trim the column name before passing it
+    fetch(`${scriptURL}?columnName=${encodeURIComponent(columnName.trim())}`)
         .then(response => response.text())
+        .then(data => console.log("Response:", data))
         .catch(error => console.error("Error:", error));
 }
 
 /* Open WhatsApp */
-openWhatsAppNumber = function(){
+openWhatsAppNumber = function () {
 
-    insertNewClick(2);
-    
+    insertNewClick('mughader');
+
     const whatsappNumber = "+966533379004";
     const message = encodeURIComponent('سلام عليكم ورحمة الله وبركاته'); // Optional pre-filled message
     const url = `https://wa.me/${whatsappNumber}?text=${message}`;
