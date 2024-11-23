@@ -344,8 +344,23 @@ document.querySelectorAll('.mughader_dynamic_direction_input_class').forEach(inp
 
 
 
+
+
+
+/* Insert new click data in the google sheet */
+function insertNewClick(column) {
+    const scriptURL = "https://script.google.com/macros/s/AKfycby0edQ6yhnPiLuA5RKMldFfAmwASGk1lNmmQRF1XstwWAl9EoO3IBSA5ehyd5wa8wXV/exec";
+
+    fetch(`${scriptURL}?column=${column}`)
+        .then(response => response.text())
+        .catch(error => console.error("Error:", error));
+}
+
 /* Open WhatsApp */
 openWhatsAppNumber = function(){
+
+    insertNewClick(2);
+    
     const whatsappNumber = "+966533379004";
     const message = encodeURIComponent('سلام عليكم ورحمة الله وبركاته'); // Optional pre-filled message
     const url = `https://wa.me/${whatsappNumber}?text=${message}`;
