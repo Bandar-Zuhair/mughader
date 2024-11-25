@@ -666,6 +666,7 @@ header {
 }
 
 .mughader_fourth_section * {
+  direction: rtl;
   font-size: 1rem;
   text-align: center;
 }
