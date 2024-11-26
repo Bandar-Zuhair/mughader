@@ -471,7 +471,6 @@ header {
 .mughader_first_section_places_names.visible {
   opacity: 1;
   visibility: visible;
-  transform: scale(1.1); /* Slight zoom for a dynamic feel */
 }
 
 
