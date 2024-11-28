@@ -18,7 +18,8 @@
 body {
   /* background: black; */
   background: white;
-  padding-top: 100px; /* Match the header height */
+  padding-top: 100px;
+  /* Match the header height */
 }
 
 
@@ -60,8 +61,7 @@ body {
   bottom: 40px;
   right: 0.3vmax;
   background-color: transparent;
-  border-radius: 50%;
-  width: 5vmax;
+  width: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +72,7 @@ body {
 
 #mughader_chatbot_icon img {
   width: 100%;
-  border-radius: 50%;
+  border-radius: 25%;
 }
 
 #mughader_chatbot_icon:hover {
@@ -216,18 +216,20 @@ body {
 
 
 .whatsapp_icon_div {
+  direction: ltr;
   z-index: 999;
   position: fixed;
   bottom: 40px;
   left: 0.3vmax;
+  background-color: #001328;
   font-size: 1.5vmax;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 3px;
-  background-color: #001328;
+  gap: 5px;
   color: white;
-  border-radius: 30px;
-  padding: 3px 5px;
+  border-radius: 7px;
+  padding: 5px 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -241,9 +243,19 @@ body {
 
 /* Styling the ion-icon */
 .whatsapp_icon_div ion-icon {
-  font-size: 2.5vmax;
+  font-size: 2vmax;
   color: white;
+  display: inline-block;
 }
+
+/* Styling the text */
+.whatsapp_icon_div p {
+  margin: 0;
+  line-height: 1;
+  font-size: 1.5vmax;
+  display: inline-block;
+}
+
 
 
 
@@ -262,16 +274,21 @@ body {
 header {
   background: black;
   position: fixed;
-  top: -140px; /* Hide the header initially */
+  top: 0; /* Initial position is visible */
   left: 0;
   width: 100%;
-  z-index: 999; /* Ensure it appears above other content */
-  transition: top 0.3s ease; /* Smooth transition */
+  z-index: 999;
+  transition: top 0.3s ease; /* Smooth transition for sliding */
 }
 
-/* When visible */
+/* When the header slides into view */
 header.show {
-  top: 0; /* Slide into view */
+  top: 0;
+}
+
+/* When the header slides out of view */
+header.hide {
+  top: -140px; /* Move it fully out of view */
 }
 
 .mughader_header_container {
@@ -414,7 +431,6 @@ header.show {
   position: relative;
   height: 30vmax;
   width: 100%;
-  background-image: url('مكتب-سياحي/مكتب-سياحي.jpg');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -809,11 +825,13 @@ header.show {
 
 
 /* Tourism Articles */
-.mughader_tourism_articles_section {
+.mughader_tourism_articles_section,
+.mughader_page_intro_title_section {
   padding: 5px 2px 30px 2px;
 }
 
-.mughader_tourism_articles_section h1 {
+.mughader_tourism_articles_section h1,
+.mughader_page_intro_title_section h1 {
   background: linear-gradient(to right, #ff2f00, #FFC300);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1204,6 +1222,7 @@ header.show {
 
 /* Footer Style */
 footer {
+  direction: ltr;
   background: black;
   display: flex;
   flex-wrap: wrap;
@@ -1221,6 +1240,47 @@ footer * {
   text-align: center;
   font-size: 1rem;
 }
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+
+  /* Chatbot Icon */
+  #mughader_chatbot_icon {
+    width: 5rem;
+  }
+
+
+
+
+
+
+
+
+  /* Styling the ion-icon */
+  .whatsapp_icon_div ion-icon {
+    font-size: 3vmax;
+  }
+
+  /* Styling the text */
+  .whatsapp_icon_div p {
+    font-size: 2.5vmax;
+  }
+
+
+}
+
+
+
+
+
 
 
 
@@ -1261,7 +1321,7 @@ footer * {
 
 
   /* WhatsApp Code */
-  .whatsapp_icon_div {
+  .whatsapp_icon_div p {
     font-size: 1rem;
   }
 
@@ -1341,7 +1401,8 @@ footer * {
 
 
   /* Second Page  --  tourism articles */
-  .mughader_tourism_articles_section h1 {
+  .mughader_tourism_articles_section h1,
+  .mughader_page_intro_title_section h1 {
     font-size: 2.5rem;
   }
 
@@ -1480,7 +1541,7 @@ footer * {
 
 
 
-  
+
   .mughader_header_container {
     justify-content: space-between;
   }
@@ -1614,7 +1675,8 @@ footer * {
     padding: 5px 10px;
   }
 
-  .mughader_tourism_articles_section h1 {
+  .mughader_tourism_articles_section h1,
+  .mughader_page_intro_title_section h1 {
     font-size: 1.5rem;
     margin-bottom: 15px;
   }

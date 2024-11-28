@@ -9336,7 +9336,7 @@ select {
 [type="submit"],
 button {
     width: auto;
-    -webkit-appearance: button;
+    appearance: button;
 }
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -9422,7 +9422,7 @@ textarea {
     height: auto;
 }
 [type="search"] {
-    -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px;
 }
 [type="search"]::-webkit-search-decoration {

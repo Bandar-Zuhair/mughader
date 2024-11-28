@@ -1,23 +1,30 @@
 let lastScrollY = window.scrollY; // Track the last scroll position
 
+// Ensure the header starts visible
+const header = document.querySelector("header");
+header.classList.add("show");
+
+// Adjust padding to prevent content overlap
+document.body.style.paddingTop = `${header.offsetHeight}px`;
+
+// Scroll event to toggle header visibility
 window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
   const currentScrollY = window.scrollY;
 
   if (currentScrollY < lastScrollY) {
-    // Scrolling up
+    // Scrolling up: Show the header
+    header.classList.remove("hide");
     header.classList.add("show");
   } else {
-    // Scrolling down
+    // Scrolling down: Hide the header
     header.classList.remove("show");
+    header.classList.add("hide");
   }
 
   lastScrollY = currentScrollY; // Update the last scroll position
 });
 
 
-const header = document.querySelector("header");
-document.body.style.paddingTop = `${header.offsetHeight}px`; // Dynamically adjust padding
 
 
 
