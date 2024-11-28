@@ -29,6 +29,10 @@ body {
 
 
 
+
+
+
+
 /* Special Style */
 /* Initial state for animation */
 .mughader_animate_on_scroll {
@@ -378,7 +382,6 @@ header {
 
 .mughader_mobile_sidebar .mughader_close_icon:hover {
   color: #ff4d4d;
-  /* Highlighted color on hover */
 }
 
 
@@ -392,21 +395,16 @@ header {
 
 
 
-
+/* First Page */
 /* First Section Style */
-.mughader_first_section {
+.mughader_first_page_intro_section {
   position: relative;
   height: 30vmax;
-  /* Full viewport height */
   width: 100%;
-  /* Full width */
   background-image: url('مكتب-سياحي/مكتب-سياحي.jpg');
   background-size: 100% 100%;
-  /* Default stretch for larger screens */
   background-position: center;
-  /* Keeps the image centered */
   background-repeat: no-repeat;
-  /* Prevents repeating the image */
 }
 
 /* Overlay */
@@ -417,7 +415,6 @@ header {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent overlay for text readability */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -427,19 +424,18 @@ header {
 .mughader_text_container {
   text-align: center;
   color: #fff;
-  /* White text for contrast */
   padding: 5px;
   width: 100%;
 }
 
-.mughader_first_section_title {
+.mughader_first_page_intro_section_title {
   font-size: 1.7vmax;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
 /* Text Styles */
-.mughader_first_section_text_1 {
+.mughader_first_page_intro_section_text_1 {
   font-size: 1.3rem;
   font-weight: bold;
   width: 100%;
@@ -447,7 +443,7 @@ header {
 }
 
 /* Text Styles */
-.mughader_first_section_text_2 {
+.mughader_first_page_intro_section_text_2 {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 10px;
@@ -456,26 +452,27 @@ header {
 }
 
 /* Smooth fade-in and fade-out effect */
-.mughader_first_section_places_names {
+.mughader_first_page_intro_section_places_names {
   opacity: 0;
-  color: #ffeb3b;
+  background: linear-gradient(to right, #ff2f00, #FFC300);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  text-shadow: 0px 4px 10px rgba(255, 235, 59, 0.5);
 }
 
 /* Make visible after fading */
-.mughader_first_section_places_names.visible {
+.mughader_first_page_intro_section_places_names.visible {
   opacity: 1;
   visibility: visible;
 }
 
 
 /* Line timer styles */
-.mughader_line_timer {
+.mughader_first_page_line_timer {
   height: 4px;
   background: linear-gradient(90deg, #ff5722, #ff9800);
   width: 0;
@@ -493,9 +490,9 @@ header {
 
 
 
-
+/* First Page */
 /* Second Section Style */
-.mughader_second_section {
+.mughader_first_page_customers_videos_section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -524,24 +521,25 @@ header {
   transition: opacity 9s ease-in-out;
 }
 
-.mughader_second_section video {
+.mughader_first_page_customers_videos_section video {
   width: 60vw;
+  border-radius: 5px;
 }
 
-.mughader_second_section * {
+.mughader_first_page_customers_videos_section * {
   font-weight: bold;
   font-size: 1.5rem;
   text-align: center;
 }
 
-.mughader_social_media_icons_div {
+.mughader_fisrt_page_social_media_icons_div {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.mughader_social_media_icons_div img {
+.mughader_fisrt_page_social_media_icons_div img {
   opacity: 0.8;
   width: 4vmax;
   margin: 0 0.2vmax;
@@ -550,7 +548,7 @@ header {
   transition: all 0.2s ease;
 }
 
-.mughader_social_media_icons_div img:hover {
+.mughader_fisrt_page_social_media_icons_div img:hover {
   transform: scale(1.05);
   opacity: 1;
 }
@@ -565,9 +563,8 @@ header {
 
 
 
-
-/* Third Section Style */
-.mughader_third_section {
+/* Visiting Places */
+.mughader_first_page_visiting_places_section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -577,7 +574,7 @@ header {
   padding: 1rem;
 }
 
-.mughader_visiting_place_card_div {
+.mughader_first_page_visiting_place_card_div {
   width: 30vmax;
   position: relative;
   overflow: hidden;
@@ -587,19 +584,19 @@ header {
   border: 0.5px solid black;
 }
 
-.mughader_visiting_place_card_div img {
+.mughader_first_page_visiting_place_card_div img {
   width: 100%;
   display: block;
   object-fit: cover;
   transition: all 1s ease;
 }
 
-.mughader_visiting_place_card_div img:hover {
+.mughader_first_page_visiting_place_card_div img:hover {
   transform: scale(1.1);
 }
 
-.mughader_visiting_place_card_div h6,
-.mughader_visiting_place_card_div div {
+.mughader_first_page_visiting_place_card_div h6,
+.mughader_first_page_visiting_place_card_div div {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -607,7 +604,7 @@ header {
   text-align: center;
 }
 
-.mughader_visiting_place_card_div h6 {
+.mughader_first_page_visiting_place_card_div h6 {
   background: rgb(0, 0, 0, 0.5);
 }
 
@@ -618,8 +615,8 @@ header {
   align-items: center;
 }
 
-.mughader_visiting_place_card_div h6,
-.mughader_visiting_place_card_div p {
+.mughader_first_page_visiting_place_card_div h6,
+.mughader_first_page_visiting_place_card_div p {
   width: fit-content;
   padding: 0 1vmax;
   top: 20%;
@@ -627,7 +624,7 @@ header {
   font-weight: bold;
 }
 
-.mughader_visiting_place_card_div div {
+.mughader_first_page_visiting_place_card_div div {
   background: rgb(0, 0, 0, 0.5);
   padding: 0.1vmax 0.5vmax;
   bottom: 10%;
@@ -641,7 +638,7 @@ header {
   /* Add a shadow for readability */
 }
 
-.mughader_visiting_place_card_div div ion-icon {
+.mughader_first_page_visiting_place_card_div div ion-icon {
   font-size: 2vmax;
   color: #fff;
   /* Match the text color */
@@ -655,20 +652,525 @@ header {
 
 
 
-
-/* Fourth Section Style */
-.mughader_fourth_section {
+/* About Us */
+.mughader_about_us_section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.mughader_fourth_section * {
+.mughader_about_us_section * {
   direction: rtl;
   font-size: 1rem;
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Customers Comments */
+.mughader_customers_comments_section {
+  background: #f9f9f9;
+}
+
+.mughader_customers_comments_section h6 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 20px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ff2f00, #FFC300);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.mughader_customers_comments_section h6::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(to right, #FF5733, #FFC300);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+#mughader_customers_comments_section_id {
+  background: #dadada;
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+#mughader_customers_comments_section_id::-webkit-scrollbar {
+  height: 10px;
+}
+
+#mughader_customers_comments_section_id::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+#mughader_customers_comments_section_id::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.mughader_comment_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40vmax;
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: center;
+}
+
+.mughader_comment_card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.mughader_profile_picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.mughader_person_name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.mughader_comment_text {
+  direction: rtl;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.mughader_stars {
+  color: #f1c40f;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tourism Articles */
+.mughader_tourism_articles_section {
+  padding: 5px 2px 30px 2px;
+}
+
+.mughader_tourism_articles_section h1 {
+  background: linear-gradient(to right, #ff2f00, #FFC300);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Cards Container */
+.mughader_tourism_articles_cards_container {
+  direction: rtl;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Individual Card */
+.mughader_tourism_articles_card {
+  position: relative;
+  width: 35vmax;
+  height: 20vmax;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mughader_tourism_articles_card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Background Image */
+.mughader_tourism_articles_card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(80%) saturate(1.2);
+}
+
+/* Card Text Overlay */
+.mughader_tourism_articles_card_text {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.mughader_tourism_articles_card_text a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.mughader_tourism_articles_card_text a:hover {
+  color: #ffd700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Third Page  --  How To Book */
+.mughader_how_to_book_section {
+  display: flex;
+  flex-direction: column;
+  background: #383838;
+  direction: rtl;
+  /* Ensure the text flows from right to left */
+  text-align: right;
+  /* Align text to the right */
+  padding: 2vmax 0;
+}
+
+/* Block Container */
+.mughader_how_to_book_content_div {
+  padding: 2rem 1.5rem 3rem;
+  /* Better readability with consistent spacing */
+}
+
+/* Block Title */
+.mughader_how_to_book_div_title {
+  font-size: clamp(2rem, 2.5vw, 2rem);
+  /* Adapts font size between 1.5rem and 2rem */
+  color: white;
+  font-weight: bold;
+  border-top: 2px solid #3498db;
+  margin-bottom: 15px;
+}
+
+/* Text Styling */
+.mughader_how_to_book_content_div p {
+  direction: rtl;
+  color: white;
+  font-size: clamp(1.5rem, 1.5vw, 1.3rem);
+  /* Adapts font size between 1rem and 1.3rem */
+  text-align: center;
+}
+
+.mughader_how_to_book_content_div video {
+  display: block;
+  margin: 0 auto;
+  width: 20rem;
+  border-radius: 5px;
+  max-width: 90vw;
+}
+
+.mughader_batumi_travel_offer_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mughader_batumi_travel_offer_card {
+  width: 55vmax !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Time in Georgia Now */
+.mughader_time_in_georgia_now_section {
+  background: rgb(40, 40, 40);
+  padding: 5px 2px 30px 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mughader_time_in_georgia_now_section h1 {
+  background: linear-gradient(to right, #ff2f00, #FFC300);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Related Topics Section */
+.mughader_visiting_cities_in_georgia_section {
+  padding: 0 2px 30px 2px;
+}
+
+.mughader_visiting_cities_in_georgia_section h1 {
+  background: linear-gradient(to right, #ff2f00, #FFC300);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Cards Container */
+.mughader_visiting_cities_in_georgia_cards_container {
+  direction: rtl;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Individual Card */
+.mughader_visiting_cities_in_georgia_card {
+  position: relative;
+  width: 25vmax;
+  height: 20vmax;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mughader_visiting_cities_in_georgia_card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Background Image */
+.mughader_visiting_cities_in_georgia_card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(80%) saturate(1.2);
+}
+
+/* Card Text Overlay */
+.mughader_visiting_cities_in_georgia_card_text {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.mughader_visiting_cities_in_georgia_card_text a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.mughader_visiting_cities_in_georgia_card_text a:hover {
+  color: #ffd700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Related Topics Section */
+.mughader_related_topics_section {
+  padding: 7vmax 2px 30px 2px;
+}
+
+.mughader_related_topics_section h1 {
+  background: linear-gradient(to right, #ff2f00, #FFC300);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Cards Container */
+.mughader_related_topics_cards_container {
+  direction: rtl;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Individual Card */
+.mughader_related_topics_card {
+  position: relative;
+  width: 25vmax;
+  height: 20vmax;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mughader_related_topics_card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Background Image */
+.mughader_related_topics_card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(80%) saturate(1.2);
+}
+
+/* Card Text Overlay */
+.mughader_related_topics_card_text {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.mughader_related_topics_card_text a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.mughader_related_topics_card_text a:hover {
+  color: #ffd700;
+}
+
+
 
 
 
@@ -711,12 +1213,10 @@ footer * {
 @media (max-width: 768px) {
   .mughader_desktop_nav {
     display: none;
-    /* Hide desktop navigation */
   }
 
   .mughader_mobile_menu_icon {
     display: block;
-    /* Show mobile menu icon */
   }
 
 
@@ -752,36 +1252,40 @@ footer * {
 
 
 
-  .mughader_first_section {
+  .mughader_first_page_intro_section {
     background-size: 110% 100%;
   }
-  .mughader_first_section_title {
-    font-size: 1.2rem;
-  }
-  .mughader_first_section_text_1 {
-    font-size: 1rem;
-  }
-  .mughader_first_section_text_2 {
-    font-size: 1rem;
-  }
-  .mughader_first_section_places_names {
+
+  .mughader_first_page_intro_section_title {
     font-size: 1.2rem;
   }
 
+  .mughader_first_page_intro_section_text_1 {
+    font-size: 1rem;
+  }
+
+  .mughader_first_page_intro_section_text_2 {
+    font-size: 1rem;
+  }
+
+  .mughader_first_page_intro_section_places_names {
+    font-size: 1.2rem;
+  }
 
 
 
 
 
-  .mughader_second_section * {
+
+  .mughader_first_page_customers_videos_section * {
     font-size: 0.9rem;
   }
 
-  .mughader_second_section video {
+  .mughader_first_page_customers_videos_section video {
     width: 80vw;
   }
 
-  .mughader_social_media_icons_div img {
+  .mughader_fisrt_page_social_media_icons_div img {
     width: 6.5vmax;
   }
 
@@ -789,19 +1293,148 @@ footer * {
 
 
 
-  .mughader_visiting_place_card_div h6 {
+  .mughader_first_page_visiting_place_card_div h6 {
     font-size: 1rem;
   }
-  .mughader_visiting_place_card_div p {
+
+  .mughader_first_page_visiting_place_card_div p {
     font-size: 0.8rem;
   }
 
 
 
 
-  .mughader_fourth_section * {
+  .mughader_about_us_section * {
     font-size: 0.8rem;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Second Page  --  tourism articles */
+  .mughader_tourism_articles_section h1 {
+    font-size: 2.5rem;
+  }
+
+  .mughader_tourism_articles_card {
+    width: 90%;
+    height: 180px;
+  }
+
+  .mughader_tourism_articles_card_text {
+    font-size: 1.1rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Third Page  --  How To Book */
+  .mughader_how_to_book_content_div {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .mughader_how_to_book_div_title {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+  }
+
+  .mughader_how_to_book_content_div p {
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Time in Georgia Now */
+  .mughader_time_in_georgia_now_section h1 {
+    font-size: 2.5rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Visiting Cities in Georgia */
+  .mughader_visiting_cities_in_georgia_section h1 {
+    font-size: 1.8rem;
+  }
+
+  .mughader_visiting_cities_in_georgia_card {
+    width: 90%;
+    height: 180px;
+  }
+
+  .mughader_visiting_cities_in_georgia_card_text {
+    font-size: 1.1rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Related Topics Section */
+  .mughader_related_topics_section h1 {
+    font-size: 2.5rem;
+  }
+
+  .mughader_related_topics_card {
+    width: 90%;
+    height: 180px;
+  }
+
+  .mughader_related_topics_card_text {
+    font-size: 1.1rem;
+  }
+
+
+
+
 
 
 
@@ -877,20 +1510,23 @@ footer * {
 
 
 
-  .mughader_first_section {
+  .mughader_first_page_intro_section {
     background-size: 120% 100%;
   }
 
-  .mughader_first_section_title {
+  .mughader_first_page_intro_section_title {
     font-size: 0.8rem;
   }
-  .mughader_first_section_text_1 {
+
+  .mughader_first_page_intro_section_text_1 {
     font-size: 0.5rem;
   }
-  .mughader_first_section_text_2 {
+
+  .mughader_first_page_intro_section_text_2 {
     font-size: 0.5rem;
   }
-  .mughader_first_section_places_names {
+
+  .mughader_first_page_intro_section_places_names {
     font-size: 0.8rem;
   }
 
@@ -898,15 +1534,15 @@ footer * {
 
 
 
-  .mughader_second_section * {
+  .mughader_first_page_customers_videos_section * {
     font-size: 0.8rem;
   }
 
-  .mughader_second_section video {
+  .mughader_first_page_customers_videos_section video {
     width: 100vw;
   }
 
-  .mughader_social_media_icons_div img {
+  .mughader_fisrt_page_social_media_icons_div img {
     width: 7vmax;
   }
 
@@ -916,19 +1552,90 @@ footer * {
 
 
   /* Third Section Style */
-  .mughader_third_section {
+  .mughader_first_page_visiting_places_section {
     padding: 1rem 0;
     gap: 0.5rem;
   }
 
-  .mughader_visiting_place_card_div {
+  .mughader_first_page_visiting_place_card_div {
     width: 100%;
     max-width: 100%;
   }
 
 
 
-  .mughader_fourth_section * {
+  .mughader_about_us_section * {
     font-size: 0.6rem;
+  }
+
+
+
+
+
+  .mughader_customers_comments_section h6 {
+    font-size: 1.3rem;
+  }
+
+
+
+
+
+
+  /* Second Page  -  tourism articles */
+  .mughader_tourism_articles_card_text {
+    padding: 5px 10px;
+  }
+
+  .mughader_tourism_articles_section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+
+
+
+
+
+
+
+
+
+  /* Time in Georgia Now */
+  .mughader_time_in_georgia_now_section h1 {
+    font-size: 1.4rem;
+  }
+
+
+
+
+
+
+
+
+  /* Visiting Cities in Georgia */
+  .mughader_visiting_cities_in_georgia_section h1 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .mughader_visiting_cities_in_georgia_card_text {
+    padding: 5px 10px;
+  }
+
+
+
+
+
+
+
+
+  /* Related Topics Section */
+  .mughader_related_topics_card_text {
+    padding: 5px 10px;
+  }
+
+  .mughader_related_topics_section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
   }
 }
