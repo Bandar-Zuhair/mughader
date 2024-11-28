@@ -5,17 +5,20 @@
 
 /* General Reset */
 * {
+  /* font-family: "nawar", Sans-serif; */
+  /* font-family: "Almarai", Sans-serif; */
   font-family: "Noto Kufi Arabic", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-weight: 400;
-  direction: ltr;
+  direction: rtl;
 }
 
 body {
   /* background: black; */
   background: white;
+  padding-top: 100px; /* Match the header height */
 }
 
 
@@ -258,7 +261,17 @@ body {
 /* Header Styling */
 header {
   background: black;
-  position: relative;
+  position: fixed;
+  top: -140px; /* Hide the header initially */
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Ensure it appears above other content */
+  transition: top 0.3s ease; /* Smooth transition */
+}
+
+/* When visible */
+header.show {
+  top: 0; /* Slide into view */
 }
 
 .mughader_header_container {
@@ -1461,6 +1474,13 @@ footer * {
 
 /* Responsive Design */
 @media (max-width: 400px) {
+  body {
+    padding-top: 0px;
+  }
+
+
+
+  
   .mughader_header_container {
     justify-content: space-between;
   }

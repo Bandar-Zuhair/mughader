@@ -1,3 +1,27 @@
+let lastScrollY = window.scrollY; // Track the last scroll position
+
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY < lastScrollY) {
+    // Scrolling up
+    header.classList.add("show");
+  } else {
+    // Scrolling down
+    header.classList.remove("show");
+  }
+
+  lastScrollY = currentScrollY; // Update the last scroll position
+});
+
+
+const header = document.querySelector("header");
+document.body.style.paddingTop = `${header.offsetHeight}px`; // Dynamically adjust padding
+
+
+
+
 function mughader_toggleSidebar() {
     let sidebar = document.getElementById("mughader_mobile_sidebar");
     let overlay = document.getElementById("mughader_sidebar_overlay");
@@ -541,3 +565,5 @@ let ioniconsNomoduleScript = document.createElement('script');
 ioniconsNomoduleScript.setAttribute('nomodule', '');
 ioniconsNomoduleScript.src = 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js';
 document.body.appendChild(ioniconsNomoduleScript);
+
+
