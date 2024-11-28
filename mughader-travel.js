@@ -1,18 +1,18 @@
-function toggleSidebar() {
-    const sidebar = document.getElementById("mughader_mobile_sidebar");
-    const overlay = document.getElementById("mughader_sidebar_overlay");
+function mughader_toggleSidebar() {
+    let sidebar = document.getElementById("mughader_mobile_sidebar");
+    let overlay = document.getElementById("mughader_sidebar_overlay");
 
     if (sidebar.style.right === "0px") {
-        closeSidebar();
+        mughader_closeSidebar();
     } else {
         sidebar.style.right = "0px"; // Show sidebar
         overlay.classList.add("active"); // Show overlay
     }
 }
 
-function closeSidebar() {
-    const sidebar = document.getElementById("mughader_mobile_sidebar");
-    const overlay = document.getElementById("mughader_sidebar_overlay");
+function mughader_closeSidebar() {
+    let sidebar = document.getElementById("mughader_mobile_sidebar");
+    let overlay = document.getElementById("mughader_sidebar_overlay");
 
     sidebar.style.right = "-250px"; // Hide sidebar
     overlay.classList.remove("active"); // Hide overlay
@@ -30,7 +30,7 @@ function closeSidebar() {
 
 /* Switching words functionality */
 document.addEventListener("DOMContentLoaded", function () {
-    const words = [
+    let words = [
         "إندونيسيا",
         "تايلاند",
         "المالديف",
@@ -48,15 +48,15 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     let currentIndex = 1;
-    const dynamicWordElement = document.getElementById("mughader_dynamic_word_switch");
-    const lineTimerElement = document.getElementById("mughader_line_timer");
+    let dynamicWordElement = document.getElementById("mughader_dynamic_word_switch");
+    let lineTimerElement = document.getElementById("mughader_first_page_line_timer_id");
 
     // Ensure the initial word is visible
     dynamicWordElement.classList.add("visible");
 
     function updateTimerWidth() {
-        const wordWidth = dynamicWordElement.offsetWidth; // Get the width of the current word
-        const scaledWidth = wordWidth * 0.1; // Adjust width to 40% of the word's width (smaller)
+        let wordWidth = dynamicWordElement.offsetWidth; // Get the width of the current word
+        let scaledWidth = wordWidth * 0.1; // Adjust width to 40% of the word's width (smaller)
         lineTimerElement.style.width = `${scaledWidth}px`; // Set timer line width
         lineTimerElement.style.margin = "0 auto"; // Center the timer under the text
     }
@@ -118,15 +118,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Function for all elements when scrolling */
 document.addEventListener("DOMContentLoaded", () => {
-    const animatedElements = document.querySelectorAll(".mughader_animate_on_scroll");
+    let animatedElements = document.querySelectorAll(".mughader_animate_on_scroll");
 
-    const observerOptions = {
+    let observerOptions = {
         root: null,
         rootMargin: "0px",
         threshold: 0.1
     };
 
-    const observerCallback = (entries) => {
+    let observerCallback = (entries) => {
         entries.forEach(entry => {
             // Check if the element is intersecting and hasn't been animated before
             if (entry.isIntersecting && !entry.target.classList.contains("animation_done")) {
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    let observer = new IntersectionObserver(observerCallback, observerOptions);
 
     animatedElements.forEach(element => {
         observer.observe(element);
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* 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 */
 
     // Check if the user is on a mobile device
-    const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
+    let isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
 
     // Open Slider if ai bot icon is clicked
     chatbotIcon.addEventListener("click", () => {
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 sendBtn.click();
             } else if (event.key === "Enter" && event.shiftKey) {
                 event.preventDefault(); // Allow Shift+Enter to insert a new line
-                const cursorPosition = messageBar.selectionStart;
+                let cursorPosition = messageBar.selectionStart;
                 messageBar.value =
                     messageBar.value.substring(0, cursorPosition) + "\n" + messageBar.value.substring(cursorPosition);
                 messageBar.selectionStart = messageBar.selectionEnd = cursorPosition + 1; // Move cursor to the new line
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messageBar.addEventListener("keydown", (event) => {
             if (event.key === "Enter") {
                 event.preventDefault(); // Prevent sending the message
-                const cursorPosition = messageBar.selectionStart;
+                let cursorPosition = messageBar.selectionStart;
                 messageBar.value =
                     messageBar.value.substring(0, cursorPosition) + "\n" + messageBar.value.substring(cursorPosition);
                 messageBar.selectionStart = messageBar.selectionEnd = cursorPosition + 1; // Move cursor to the new line
@@ -302,13 +302,178 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Auto resize textarea element */
 document.addEventListener("DOMContentLoaded", function () {
-    const messageBar = document.getElementById("mughader_message_bar");
+    let messageBar = document.getElementById("mughader_message_bar");
 
     messageBar.addEventListener("input", function () {
         this.style.height = "auto"; // Reset height to auto
         this.style.height = `${this.scrollHeight}px`; // Set height based on scroll height
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let mughader_commentsArray = [
+    {
+        profileImage: "https://moghader.com/مكتب-للسفر-والسياحة/مكتب-للسفر-والسياحة-3.png",
+        personName: "ناصر الهزاع",
+        comment: "وكاله مغادر اشكر ابو عبدالرحمن على تعامله معي انا للامانه رحت معاه لكذا دوله يستاهل كل خير ♥️♥️",
+        stars: 5
+    },
+    {
+        profileLetter: "H",
+        personName: "Hh Oo",
+        comment: "شركة محترمة وصادقة ومرضية للعميل وتقدم خدمات مميزة واسعار مناسبة وخدمات مختلفة.",
+        stars: 5
+    },
+    {
+        profileLetter: "E",
+        personName: "Emanoo Emee",
+        comment: "والله الخدمه جدا رائعه و موفره جميع سبل الراحه و الرفاهيه من خدمة حجوزات الفنادق و السائق الخاص خلال الرحله و تنظيم جداول يوميه للرحلات و توفير خدمة مترجم و المطاعم و جميع الاماكن السياحيه عمل جدا عظيم و جبار و السعر كان جدا مناسب شكرا جزيلا 🙏🏻🌹.",
+        stars: 5
+    },
+    {
+        profileLetter: "D",
+        personName: "Dal8800 دال للعقارات",
+        comment: "شكرا مغادرعلى اتقانكم  بالعمل وعلى خدمتكم الجميله بارك الله فيكم وفي جهودكم الى الاعلى بإذن",
+        stars: 5
+    },
+    {
+        profileLetter: "أ",
+        personName: "احمد الهزاع",
+        comment: "وكاله مغادر من افضل الوكالات رحت معهم مرتين جورجيا وماليزيا ترتيبات احسن ما يكون وسواقين محترمين واسعار منافسه لكن للامانه اللي بيروح جورجيا يحتاط من المتسولين فقط.",
+        stars: 5
+    },
+    {
+        profileLetter: "F",
+        personName: "Fahad Fahad",
+        comment: "خدمه خمس نجوم فعلياً من الاستقبال الى التوديع شكراً لاتفي حقكم ❤️",
+        stars: 5
+    },
+    {
+        profileLetter: "ح",
+        personName: "حامد العنزي",
+        comment: "من أرقى الشركات تعامل وصدق ودقة ويهمهم راحت السائح بأدق التفاصيل وعلى تواصل مباشر مع السائح يوميا حتى العودة",
+        stars: 5
+    },
+    {
+        profileImage: "https://moghader.com/مكتب-للسفر-والسياحة/مكتب-للسفر-والسياحة-1.png",
+        personName: "م.ثامر الغنيمي",
+        comment: "شكراً لكم على خدمتكم الجميلة وتعاملكم الاحترافي وبرامجكم المرنة.. 👍🏻",
+        stars: 5
+    },
+    {
+        profileLetter: "ن",
+        personName: "ناصر الموسى",
+        comment: "نشكر وكاله مغادر على جهوده وتمنى له دائم التوفيق و والــــنــــجـــــاح",
+        stars: 5
+    },
+    {
+        profileLetter: "H",
+        personName: "Hala Abdullah",
+        comment: "من افضل واحسن الي تعاملت معهم للامانة ولا غلطة والاسعار حلوه جدا ومعقولة مرا شككككرا  شركة مغادر للسياحة 💛🙏🏻",
+        stars: 5
+    },
+    {
+        profileImage: "https://moghader.com/مكتب-للسفر-والسياحة/مكتب-للسفر-والسياحة-2.png",
+        personName: "FAISAL ALHAMED",
+        comment: "من افضل وكالات السفر التي تتميز بتقديم خدمات فريدة من نوعها لا يمكن ان تجدها في غيرها من الوكالات",
+        stars: 5
+    },
+    {
+        profileLetter: "س",
+        personName: "سامي الموسى",
+        comment: "صراحه مجهود يشكر عليه من وكالة مغادر للسفر والسياحة ومن افضل الشركات الي حريصه علئ ادق التفاصيل شركه تلبي جميع احتيجاتك وعن تجربه اتكلم صراحه تعاملهم جدا راقي بجميع الاماكن والاوقات ❤️❤️",
+        stars: 5
+    },
+];
+
+// Array of vibrant colors
+let mughader_profileColors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#FFC300", "#33FFF2"];
+
+function mughader_generateComments(comments) {
+    let commentsSection = document.getElementById("mughader_customers_comments_section_id");
+
+    comments.forEach(({ profileLetter, profileImage, personName, comment, stars }, index) => {
+        // Create the main comment card
+        let commentCard = document.createElement("div");
+        commentCard.className = "mughader_comment_card";
+
+        // Create the profile picture element
+        let profilePicture = document.createElement("div");
+        profilePicture.className = "mughader_profile_picture";
+
+        if (profileImage) {
+            // Use an image if profileImage is provided
+            let img = document.createElement("img");
+            img.src = profileImage;
+            img.alt = `مكتب سياحي - شركة مغادر`;
+            img.title = `مكتب سياحي - شركة مغادر`;
+            profilePicture.appendChild(img);
+        } else if (profileLetter) {
+            // Use the profile letter if no image is provided
+            profilePicture.textContent = profileLetter;
+
+            // Assign a vibrant color to the profile picture
+            let colorIndex = index % mughader_profileColors.length; // Cycle through the colors
+            profilePicture.style.backgroundColor = mughader_profileColors[colorIndex];
+        }
+
+        // Create the person's name
+        let personNameElement = document.createElement("div");
+        personNameElement.className = "mughader_person_name";
+        personNameElement.textContent = personName;
+
+        // Create the comment text
+        let commentText = document.createElement("div");
+        commentText.className = "mughader_comment_text";
+        commentText.textContent = comment;
+
+        // Create the stars
+        let starsElement = document.createElement("div");
+        starsElement.className = "mughader_stars";
+        starsElement.textContent = "★".repeat(stars);
+
+        // Append all elements to the comment card
+        commentCard.appendChild(profilePicture);
+        commentCard.appendChild(personNameElement);
+        commentCard.appendChild(commentText);
+        commentCard.appendChild(starsElement);
+
+        // Append the comment card to the section
+        commentsSection.appendChild(commentCard);
+    });
+}
+
+// Call the function to populate comments
+mughader_generateComments(mughader_commentsArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -341,15 +506,9 @@ document.querySelectorAll('.mughader_dynamic_direction_input_class').forEach(inp
     });
 });
 
-
-
-
-
-
-
 /* Insert new click data in the google sheet */
 function insertNewClick(columnName) {
-    const scriptURL = "https://script.google.com/macros/s/AKfycbyU-p7z3tHF0I1K0GCmjcRG3CaG0NPkGyMPTvhlGPISxwIYrt6ueD7O2iHSza9SPOP3/exec";
+    let scriptURL = "https://script.google.com/macros/s/AKfycbyU-p7z3tHF0I1K0GCmjcRG3CaG0NPkGyMPTvhlGPISxwIYrt6ueD7O2iHSza9SPOP3/exec";
 
     // Trim the column name before passing it
     fetch(`${scriptURL}?columnName=${encodeURIComponent(columnName.trim())}`)
@@ -363,9 +522,9 @@ openWhatsAppNumber = function () {
 
     insertNewClick('mughader');
 
-    const whatsappNumber = "+966533379004";
-    const message = encodeURIComponent('سلام عليكم ورحمة الله وبركاته'); // Optional pre-filled message
-    const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+    let whatsappNumber = "+966533379004";
+    let message = encodeURIComponent('سلام عليكم ورحمة الله وبركاته'); // Optional pre-filled message
+    let url = `https://wa.me/${whatsappNumber}?text=${message}`;
     window.open(url, "_blank"); // Opens in a new tab
 }
 
