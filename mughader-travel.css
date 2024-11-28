@@ -679,6 +679,7 @@ header {
 /* Customers Comments */
 .mughader_customers_comments_section {
   background: #f9f9f9;
+  padding-top: 0.5vmax;
 }
 
 .mughader_customers_comments_section h6 {
@@ -1144,6 +1145,12 @@ header {
   object-fit: cover;
   object-position: center;
   filter: brightness(80%) saturate(1.2);
+  transition: all 0.5s ease;
+}
+
+/* Card Background Image */
+.mughader_related_topics_card img:hover {
+  transform: scale(1.05);
 }
 
 /* Card Text Overlay */
@@ -1189,16 +1196,17 @@ footer {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  padding: 2vmax 0;
 }
 
 footer img {
-  width: 6rem;
+  width: 7rem;
 }
 
 footer * {
   color: white;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 
@@ -1441,7 +1449,7 @@ footer * {
 
 
   footer * {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 }
 
