@@ -41,7 +41,7 @@ body {
 /* Initial state for animation */
 .mughader_animate_on_scroll {
   transform: translateY(0px);
-  transition: all 1s ease !important;
+  transition: all 1s ease-in-out !important;
 }
 
 /* Intro Animation */
@@ -67,7 +67,7 @@ body {
   align-items: center;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #mughader_chatbot_icon img {
@@ -232,7 +232,7 @@ body {
   padding: 5px 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
 }
 
 /* Add hover effect */
@@ -274,11 +274,11 @@ body {
 header {
   background: black;
   position: fixed;
-  top: 0; /* Initial position is visible */
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  transition: top 0.3s ease; /* Smooth transition for sliding */
+  transition: top 0.3s ease-in-out;
 }
 
 /* When the header slides into view */
@@ -288,7 +288,7 @@ header.show {
 
 /* When the header slides out of view */
 header.hide {
-  top: -140px; /* Move it fully out of view */
+  top: -140px;
 }
 
 .mughader_header_container {
@@ -322,7 +322,7 @@ header.hide {
   font-size: 0.9rem;
   font-weight: bold;
   white-space: nowrap;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .mughader_nav_links a:hover {
@@ -348,7 +348,7 @@ header.hide {
   background-color: #ffffff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  transition: right 0.3s ease;
+  transition: right 0.3s ease-in-out;
 }
 
 .mughader_mobile_sidebar ul {
@@ -379,15 +379,10 @@ header.hide {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent background */
   z-index: 998;
-  /* Below sidebar but above other content */
   opacity: 0;
-  /* Start fully transparent */
   visibility: hidden;
-  /* Hide from view */
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  /* Smooth transition */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 /* Active Overlay */
@@ -407,7 +402,7 @@ header.hide {
   font-size: 2rem;
   cursor: pointer;
   color: #333;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .mughader_mobile_sidebar .mughader_close_icon:hover {
@@ -482,6 +477,9 @@ header.hide {
 
 /* Smooth fade-in and fade-out effect */
 .mughader_first_page_intro_section_places_names {
+  -webkit-background-clip: text;
+  text-align: center;
+  line-height: 1.5;
   opacity: 0;
   background: linear-gradient(to right, #ff2f00, #FFC300);
   background-clip: text;
@@ -574,7 +572,7 @@ header.hide {
   margin: 0 0.2vmax;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 .mughader_fisrt_page_social_media_icons_div img:hover {
@@ -617,7 +615,7 @@ header.hide {
   width: 100%;
   display: block;
   object-fit: cover;
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
 }
 
 .mughader_first_page_visiting_place_card_div img:hover {
@@ -657,20 +655,16 @@ header.hide {
   background: rgb(0, 0, 0, 0.5);
   padding: 0.1vmax 0.5vmax;
   bottom: 10%;
-  /* Position near the bottom */
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  /* Space between icon and text */
   font-size: 1.2vmax;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  /* Add a shadow for readability */
 }
 
 .mughader_first_page_visiting_place_card_div div ion-icon {
   font-size: 2vmax;
   color: #fff;
-  /* Match the text color */
 }
 
 
@@ -719,6 +713,8 @@ header.hide {
   margin-top: 20px;
   text-transform: uppercase;
   background: linear-gradient(to right, #ff2f00, #FFC300);
+  -webkit-background-clip: text;
+  line-height: 1.5;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -770,7 +766,7 @@ header.hide {
   padding: 15px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   scroll-snap-align: center;
 }
 
@@ -834,11 +830,12 @@ header.hide {
 .mughader_page_intro_title_section h1 {
   background: linear-gradient(to right, #ff2f00, #FFC300);
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 3rem;
-  margin-bottom: 40px;
   font-weight: bold;
   text-align: center;
+  line-height: 1.5;
 }
 
 /* Cards Container */
@@ -859,7 +856,7 @@ header.hide {
   border-bottom-left-radius: 10%;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
 .mughader_tourism_articles_card:hover {
@@ -895,7 +892,7 @@ header.hide {
   color: #fff;
   text-decoration: none;
   display: block;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .mughader_tourism_articles_card_text a:hover {
@@ -1013,6 +1010,8 @@ header.hide {
 }
 
 .mughader_time_in_georgia_now_section h1 {
+  -webkit-background-clip: text;
+  line-height: 1.5;
   background: linear-gradient(to right, #ff2f00, #FFC300);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1035,12 +1034,14 @@ header.hide {
 
 
 
-/* Related Topics Section */
+/* Visiting Places Section */
 .mughader_visiting_cities_in_georgia_section {
   padding: 0 2px 30px 2px;
 }
 
 .mughader_visiting_cities_in_georgia_section h1 {
+  -webkit-background-clip: text;
+  line-height: 1.5;
   background: linear-gradient(to right, #ff2f00, #FFC300);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1068,7 +1069,7 @@ header.hide {
   border-bottom-left-radius: 10%;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
 .mughader_visiting_cities_in_georgia_card:hover {
@@ -1104,7 +1105,7 @@ header.hide {
   color: #fff;
   text-decoration: none;
   display: block;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .mughader_visiting_cities_in_georgia_card_text a:hover {
@@ -1126,12 +1127,108 @@ header.hide {
 
 
 
+.mughader_visiting_place_images_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2vmax 0;
+}
+
+.mughader_visiting_place_images_section h1 {
+  -webkit-background-clip: text;
+  line-height: 1.5;
+  background: linear-gradient(to right, #ff2f00, #FFC300);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mughader_visiting_place_images_section div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1vmax;
+}
+
+.mughader_visiting_place_images_section img {
+  width: 20%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.mughader_visiting_place_images_section img:hover {
+  box-shadow: 0 5px 5px rgba(0, 0, 0);
+}
+
+/* Full-screen overlay styles */
+#mughader_image_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#mughader_image_overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#mughader_image_overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+#mughader_image_overlay img:hover {
+  transform: scale(1.02);
+}
+
+.mughader_overlay_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Related Topics Section */
 .mughader_related_topics_section {
   padding: 7vmax 2px 30px 2px;
 }
 
 .mughader_related_topics_section h1 {
+  -webkit-background-clip: text;
+  line-height: 1.5;
   background: linear-gradient(to right, #ff2f00, #FFC300);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1159,7 +1256,7 @@ header.hide {
   border-bottom-left-radius: 10%;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease-in-out;
 }
 
 .mughader_related_topics_card:hover {
@@ -1176,7 +1273,7 @@ header.hide {
   object-fit: cover;
   object-position: center;
   filter: brightness(80%) saturate(1.2);
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Card Background Image */
@@ -1201,7 +1298,7 @@ header.hide {
   color: #fff;
   text-decoration: none;
   display: block;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .mughader_related_topics_card_text a:hover {
@@ -1402,7 +1499,8 @@ footer * {
 
   /* Second Page  --  tourism articles */
   .mughader_tourism_articles_section h1,
-  .mughader_page_intro_title_section h1 {
+  .mughader_page_intro_title_section h1,
+  .mughader_visiting_place_images_section h1 {
     font-size: 2.5rem;
   }
 
@@ -1527,6 +1625,18 @@ footer * {
   }
 }
 
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .mughader_visiting_place_images_section img {
+    width: 30%;
+  }
+}
 
 
 
@@ -1676,9 +1786,9 @@ footer * {
   }
 
   .mughader_tourism_articles_section h1,
-  .mughader_page_intro_title_section h1 {
+  .mughader_page_intro_title_section h1,
+  .mughader_visiting_place_images_section h1 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
   }
 
 

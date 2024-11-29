@@ -9,19 +9,19 @@ document.body.style.paddingTop = `${header.offsetHeight}px`;
 
 // Scroll event to toggle header visibility
 window.addEventListener("scroll", () => {
-  const currentScrollY = window.scrollY;
+    const currentScrollY = window.scrollY;
 
-  if (currentScrollY < lastScrollY) {
-    // Scrolling up: Show the header
-    header.classList.remove("hide");
-    header.classList.add("show");
-  } else {
-    // Scrolling down: Hide the header
-    header.classList.remove("show");
-    header.classList.add("hide");
-  }
+    if (currentScrollY < lastScrollY) {
+        // Scrolling up: Show the header
+        header.classList.remove("hide");
+        header.classList.add("show");
+    } else {
+        // Scrolling down: Hide the header
+        header.classList.remove("show");
+        header.classList.add("hide");
+    }
 
-  lastScrollY = currentScrollY; // Update the last scroll position
+    lastScrollY = currentScrollY; // Update the last scroll position
 });
 
 
@@ -342,6 +342,41 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
+
+
+
+/* Full screen image mood */
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".mughader_clickable");
+    const overlay = document.getElementById("mughader_image_overlay");
+    const fullScreenImage = document.getElementById("mughader_full_screen_image");
+
+    // Function to show the full-screen overlay
+    const showOverlay = (src) => {
+        fullScreenImage.src = src;
+        overlay.classList.add("show");
+    };
+
+    // Function to hide the full-screen overlay with a delay
+    const hideOverlay = () => {
+        overlay.classList.remove("show");
+        // Wait for the transition to complete before removing the image source
+        setTimeout(() => {
+            fullScreenImage.src = "";
+        }, 300); // Match the duration of the CSS transition
+    };
+
+    // Event listener for each image to open the overlay
+    images.forEach((img) => {
+        img.addEventListener("click", () => showOverlay(img.src));
+    });
+
+    // Event listener for overlay click to hide it
+    overlay.addEventListener("click", hideOverlay);
+});
 
 
 
