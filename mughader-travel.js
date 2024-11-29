@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let botResponse = `
                 <div class="chat response">
-                    <img src="مكتب-سياحي/مكتب-سياحي-حائل.jpg">
+                    <img src="https://mughader.com/مكتب-سياحي/مكتب-سياحي-حائل.jpg">
                     <span class="new">...</span>
                 </div>
             `;
