@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let botResponse = `
                 <div class="chat response">
-                    <img src="https://mughader.com/مكتب-سياحي/مكتب-سياحي-حائل.jpg">
+                    <img src="https://mughader.com/مكتب-سياحي/مكتب-سياحي-حائل.jpg" alt="مكتب سياحي - شركة مغادر" title="مكتب سياحي - شركة مغادر" class="no_full_screen_image">
                     <span class="new">...</span>
                 </div>
             `;
@@ -344,10 +344,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-/* Full screen image mood */
+/* Full screen image mode for all images on the website */
 document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll(".mughader_clickable");
-    const overlay = document.getElementById("mughader_image_overlay");
+    // Dynamically create the overlay container
+    const overlay = document.createElement("div");
+    overlay.id = "mughader_image_overlay";
+    overlay.innerHTML = `
+        <div class="mughader_overlay_background"></div>
+        <img id="mughader_full_screen_image" src="مكتب سياحي - شركة مغادر" alt="مكتب سياحي - شركة مغادر">
+    `;
+    document.body.appendChild(overlay);
+
+    // Select all images on the website
+    const allImages = document.querySelectorAll("img:not(.no_full_screen_image)");
     const fullScreenImage = document.getElementById("mughader_full_screen_image");
 
     // Function to show the full-screen overlay
@@ -366,13 +375,17 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Event listener for each image to open the overlay
-    images.forEach((img) => {
+    allImages.forEach((img) => {
+        img.classList.add("mughader_clickable"); // Optional: Add a class for styling if needed
         img.addEventListener("click", () => showOverlay(img.src));
     });
 
     // Event listener for overlay click to hide it
     overlay.addEventListener("click", hideOverlay);
 });
+
+
+
 
 
 
