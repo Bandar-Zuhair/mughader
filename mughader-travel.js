@@ -85,26 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ensure the initial word is visible
     dynamicWordElement.classList.add("visible");
 
-    function updateTimerWidth() {
-        let wordWidth = dynamicWordElement.offsetWidth; // Get the width of the current word
-        let scaledWidth = wordWidth * 0.1; // Adjust width to 40% of the word's width (smaller)
-        lineTimerElement.style.width = `${scaledWidth}px`; // Set timer line width
-        lineTimerElement.style.margin = "0 auto"; // Center the timer under the text
-    }
-
-    function resetTimer() {
-        lineTimerElement.style.transition = "none"; // Disable transition to reset instantly
-        lineTimerElement.style.width = "0"; // Reset width to 0
-        setTimeout(() => {
-            lineTimerElement.style.transition = "width 1.8s linear"; // Reapply transition
-            lineTimerElement.style.width = `${dynamicWordElement.offsetWidth * 0.1}px`; // Start animation
-        }, 50); // Small delay to ensure transition is reapplied
-    }
-
     function changeWord() {
         // Fade out by removing 'visible' class
         dynamicWordElement.classList.remove("visible");
 
+        // Wait for the fade-out animation to complete before switching the word
         setTimeout(() => {
             // Change word
             dynamicWordElement.innerText = words[currentIndex];
@@ -112,22 +97,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Fade in by adding 'visible' class
             dynamicWordElement.classList.add("visible");
+        }, 600); // Match the CSS fade-out duration (0.6s)
+    }
 
-            // Update timer width
-            updateTimerWidth();
-        }, 300); // Match CSS fade duration
+    function animateTimer() {
+        // Reset the timer to start from the center
+        lineTimerElement.style.transition = "none"; // Disable transition for instant reset
+        lineTimerElement.style.transform = "scaleX(0)"; // Collapse the line
 
-        // Reset and start the timer line animation
-        resetTimer();
+        // Start the animation after a small delay
+        setTimeout(() => {
+            lineTimerElement.style.transition = "transform 1.8s linear"; // Smooth scaling transition
+            lineTimerElement.style.transform = "scaleX(0.1)"; // Expand the line
+        }, 50); // Delay to ensure the transition is applied
+    }
+
+    function startSwitchingProcess() {
+        changeWord(); // Change the word
+        animateTimer(); // Animate the timer
     }
 
     // Start the loop
-    setInterval(changeWord, 1800); // Match the timer line animation duration
+    setInterval(startSwitchingProcess, 1800); // Match the timer's animation duration (1.8s)
 
-    // Adjust the timer width for the initial word
-    updateTimerWidth();
-    resetTimer(); // Start timer animation for the first word
+    // Initialize the first word and timer animation
+    animateTimer();
 });
+
 
 
 
